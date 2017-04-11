@@ -1,0 +1,22 @@
+{
+  "name": "flashcard-generator",
+  "version": "1.0.0",
+  "description": "Flashcard Generator",
+  "main": "basiccard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rimjieun/Flashcard-Generator.git"
+  },
+  "author": "Jieun Rim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rimjieun/Flashcard-Generator/issues"
+  },
+  "homepage": "https://github.com/rimjieun/Flashcard-Generator#readme",
+  "dependencies": {
+    "inquirer": "^3.0.6"
+  }
+}
