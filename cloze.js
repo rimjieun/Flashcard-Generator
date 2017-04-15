@@ -12,8 +12,7 @@ class ClozeCard {
       this.partial = function() {
         return text.replace(cloze, "...");
       };
-    }
-    
+    } 
   }
 
   storeCard() {
