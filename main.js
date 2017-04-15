@@ -1,5 +1,5 @@
-const BasicCard = require("./basiccard");
-const ClozeCard = require("./clozecard");
+const BasicCard = require("./basic");
+const ClozeCard = require("./cloze");
 const inquirer = require("inquirer");
 
 
@@ -19,11 +19,8 @@ if (type === "basic") {
     }
   ]).then(function(user) {
     var newBasic = new BasicCard(user.question, user.answer);
-    console.log(newBasic);
-    console.log(newBasic.front);
-    console.log(newBasic.back);
-    newBasic.storeCard("basiccard.json.channel", newBasic);
-  })
+    newBasic.storeCard();
+  });
   
 }
 
@@ -31,16 +28,18 @@ if (type === "cloze") {
   inquirer.prompt([
     {
       type: "input",
-      message: "Question:",
+      message: "Text:",
       name: "question"
     },
     {
       type: "input",
-      message: "Answer",
+      message: "Cloze:",
       name: "answer"
     }
   ]).then(function(user) {
     var newCloze = new ClozeCard(user.question, user.answer);
-    console.log(newCloze.partial());  
-  })
+    if (newCloze.isValid) {
+      newCloze.storeCard();
+    }
+  });
 }
